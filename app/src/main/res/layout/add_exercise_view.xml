@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddExerciseView">
+
+    <RadioGroup
+        android:id="@+id/newOrExistingRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center">
+
+        <RadioButton
+            android:id="@+id/radioButtonExisting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose existing" />
+
+        <RadioButton
+            android:id="@+id/radioButtonNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create new" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/existingExercisesSpinnerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/newOrExistingRadioGroup"
+        android:layout_marginTop="15sp">
+
+        <Spinner
+            android:id="@+id/existingExercisesSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/newExerciseLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/newOrExistingRadioGroup"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="15sp"
+        android:layout_marginRight="15sp"
+        android:layout_marginLeft="15sp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/newOrExistingRadioGroup"
+            android:id="@+id/exerciseNameTextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/exerciseNameTextInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="15sp"
+                android:layout_marginTop="15sp"
+                android:layout_marginRight="15sp"
+                android:hint="Exercise name here" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/timeOrRepsRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:layout_marginTop="15sp">
+
+            <RadioButton
+                android:id="@+id/radioButtonReps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reps" />
+
+            <RadioButton
+                android:id="@+id/radioButtonTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:id="@+id/timeInputLayout"
+            android:layout_marginTop="15sp">
+
+            <TextView
+                android:id="@+id/timeInputLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Exercise time" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="15sp"
+                android:layout_marginRight="15sp">
+
+                <TextView
+                    android:id="@+id/hoursInputLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HH" />
+
+                <EditText
+                    android:id="@+id/timeHoursInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="15sp">
+
+                <TextView
+                    android:id="@+id/minutesInputLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="mm" />
+
+                <EditText
+                    android:id="@+id/timeMinutesInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/secondsInputLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ss" />
+
+                <EditText
+                    android:id="@+id/timeSecondsInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:id="@+id/repsInputLayout"
+            android:layout_marginTop="15sp">
+
+            <TextView
+                android:id="@+id/repsInputLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount of reps" />
+
+            <EditText
+                android:id="@+id/numberOfRepsInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="15sp">
+
+            <TextView
+                android:id="@+id/autostartLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enable automatic exercise start" />
+
+            <Switch
+                android:id="@+id/autostartSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15sp"></Switch>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/notesInputLayout"
+            android:layout_marginTop="15sp">
+
+            <TextView
+                android:id="@+id/notesInputLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notes" />
+
+            <EditText
+                android:id="@+id/multilineNotesTextInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|top"
+                android:inputType="textMultiLine" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/saveExerciseButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15sp"
+            android:layout_marginVertical="15sp"
+            android:text="Save"
+            tools:layout_editor_absoluteX="15dp" />
+        <Button
+            android:id="@+id/removeFromTrainingExerciseButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15sp"
+           android:layout_marginBottom="15sp"
+            android:text="Remove from training"
+            tools:layout_editor_absoluteX="15dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

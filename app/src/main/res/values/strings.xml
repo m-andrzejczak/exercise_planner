@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Training planner</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_edit_training">Edit training</string>
+    <string name="action_remove_training">Remove training</string>
+    <string name="action_run_training">Run training</string>
+    <string name="action_edit_exercise">Edit exercise</string>
+    <string name="action_remove_exercise">Remove exercise</string>
+    <string name="action_training_history">Training history</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="trainings_view_label">Trainings</string>
+    <string name="exercises_view_label">Exercises</string>
+    <string name="add_training_view_label">Add training</string>
+    <string name="add_exercise_view_label">Add exercise</string>
+</resources>

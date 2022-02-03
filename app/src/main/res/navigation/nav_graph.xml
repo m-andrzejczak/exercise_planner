@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/trainingView">
+
+    <fragment
+        android:id="@+id/trainingView"
+        android:name="com.example.exercise_planner.TrainingView"
+        android:label="@string/trainings_view_label"
+        tools:layout="@layout/training_view">
+        <action
+            android:id="@+id/action_trainingView_to_addTrainingView"
+            app:destination="@id/addTrainingView"
+            app:launchSingleTop="false" />
+        <action
+            android:id="@+id/action_trainingView_to_exerciseView"
+            app:destination="@id/exerciseView" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTrainingView"
+        android:name="com.example.exercise_planner.AddTrainingView"
+        android:label="{tabTitle}">
+        <action
+            android:id="@+id/action_addTrainingView_to_trainingView"
+            app:destination="@id/trainingView" />
+        <action
+            android:id="@+id/action_addTrainingView_to_exerciseView"
+            app:destination="@id/exerciseView" />
+        <argument
+            android:name="trainingId"
+            app:argType="string" />
+        <argument
+            android:name="trainingName"
+            app:argType="string" />
+        <argument
+            android:name="tabTitle"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseView"
+        android:name="com.example.exercise_planner.ExerciseView"
+        android:label="{trainingName}"
+        tools:layout="@layout/exercise_view">
+        <action
+            android:id="@+id/action_exerciseView_to_addExerciseView"
+            app:destination="@id/addExerciseView" />
+        <action
+            android:id="@+id/action_exerciseView_to_trainingView"
+            app:destination="@id/trainingView" />
+        <argument
+            android:name="trainingId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_exerciseView_to_addTrainingView"
+            app:destination="@id/addTrainingView" />
+        <action
+            android:id="@+id/action_exerciseView_to_runTrainingView"
+            app:destination="@id/runTrainingView" />
+        <action
+            android:id="@+id/action_exerciseView_to_trainingHistoryView"
+            app:destination="@id/trainingHistoryView" />
+        <argument
+            android:name="trainingName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addExerciseView"
+        android:name="com.example.exercise_planner.AddExerciseView"
+        android:label="{tabTitle}"
+        tools:layout="@layout/add_exercise_view">
+        <action
+            android:id="@+id/action_addExerciseView_to_exerciseView"
+            app:destination="@id/exerciseView" />
+        <argument
+            android:name="trainingId"
+            app:argType="string" />
+        <argument
+            android:name="exerciseId"
+            app:argType="string" />
+        <argument
+            android:name="exerciseIdx"
+            app:argType="integer" />
+        <argument
+            android:name="tabTitle"
+            app:argType="string" />
+        <argument
+            android:name="trainingName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/runTrainingView"
+        android:name="com.example.exercise_planner.RunTrainingView"
+        android:label="{trainingName}"
+        tools:layout="@layout/run_training_view">
+        <action
+            android:id="@+id/action_runTrainingView_to_exerciseView"
+            app:destination="@id/exerciseView" />
+        <argument
+            android:name="trainingId"
+            app:argType="string" />
+        <argument
+            android:name="trainingName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainingHistoryView"
+        android:name="com.example.exercise_planner.TrainingHistoryView"
+        android:label="{trainingName}"
+        tools:layout="@layout/training_history_view">
+        <action
+            android:id="@+id/action_trainingHistoryView_to_exerciseView"
+            app:destination="@id/exerciseView" />
+        <argument
+            android:name="trainingId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_trainingHistoryView_to_trainingHistoryDetailsView"
+            app:destination="@id/trainingHistoryDetailsView" />
+        <argument
+            android:name="trainingName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainingHistoryDetailsView"
+        android:name="com.example.exercise_planner.TrainingHistoryDetailsView"
+        android:label="{trainingName}"
+        tools:layout="@layout/training_history_details_view">
+        <action
+            android:id="@+id/action_trainingHistoryDetailsView_to_trainingHistoryView"
+            app:destination="@id/trainingHistoryView" />
+        <argument
+            android:name="trainingId"
+            app:argType="string" />
+        <argument
+            android:name="trainingDate"
+            app:argType="long" />
+        <argument
+            android:name="trainingName"
+            app:argType="string" />
+    </fragment>
+</navigation>
